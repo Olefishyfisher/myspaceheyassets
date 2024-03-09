@@ -22,7 +22,7 @@ function createRainingImages() {
         image.style.animationDelay = delay + 's'; // Set animation delay for each image
         rainContainer.appendChild(image);
 
-        delay += 1; // Increase delay for next image
+        delay += 30; // Increase delay for next image (30 seconds)
     }
 }
 
