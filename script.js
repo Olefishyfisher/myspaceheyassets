@@ -11,16 +11,17 @@ function createRainingImages() {
     let delay = 0;
 
     for (let i = 0; i < 50; i++) { // Adjust the number of images as needed
-        const image = document.createElement('img');
-        const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
-        image.src = randomImageUrl;
-        image.classList.add('raindrop');
-        image.style.width = '50px'; // Adjust the width of the images
-        image.style.height = 'auto'; // Maintain aspect ratio
-        image.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
-        image.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random animation duration (between 2 to 6 seconds)
-        image.style.animationDelay = delay + 's'; // Set animation delay for each image
-        rainContainer.appendChild(image);
+        setTimeout(() => {
+            const image = document.createElement('img');
+            const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
+            image.src = randomImageUrl;
+            image.classList.add('raindrop');
+            image.style.width = '50px'; // Adjust the width of the images
+            image.style.height = 'auto'; // Maintain aspect ratio
+            image.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
+            image.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random animation duration (between 2 to 6 seconds)
+            rainContainer.appendChild(image);
+        }, delay * 1000); // Convert delay to milliseconds
 
         delay += 30; // Increase delay for next image (30 seconds)
     }
