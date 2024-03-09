@@ -8,21 +8,24 @@ const imageUrls = [
 // Function to create raining images
 function createRainingImages() {
     const rainContainer = document.querySelector('.rain-container');
-
+    
     function addImage() {
         const image = document.createElement('img');
         const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
         image.src = randomImageUrl;
         image.classList.add('raindrop');
-        image.style.width = '50px'; // Adjust the width of the images
+        image.style.width = '40px'; // Adjust the width of the images
         image.style.height = 'auto'; // Maintain aspect ratio
         image.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
         image.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random animation duration (between 2 to 6 seconds)
         rainContainer.appendChild(image);
     }
 
-    // Call the function to add a single image
-    addImage();
+    // Add two images every 15 seconds
+    setInterval(() => {
+        addImage();
+        addImage();
+    }, 15000); // 15 seconds in milliseconds
 }
 
 // Call the function to create raining images when the page loads
