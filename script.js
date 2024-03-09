@@ -21,14 +21,8 @@ function createRainingImages() {
         rainContainer.appendChild(image);
     }
 
-    function addImageWithDelay(delay) {
-        setTimeout(() => {
-            addImage();
-            addImageWithDelay(30000); // Add next image after 30 seconds (30000 milliseconds)
-        }, delay);
-    }
-
-    addImageWithDelay(0); // Start adding images immediately
+    // Call the function to add a single image
+    addImage();
 }
 
 // Call the function to create raining images when the page loads
