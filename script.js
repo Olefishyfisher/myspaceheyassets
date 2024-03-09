@@ -8,6 +8,7 @@ const imageUrls = [
 // Function to create raining images
 function createRainingImages() {
     const rainContainer = document.querySelector('.rain-container');
+    let delay = 0;
 
     for (let i = 0; i < 50; i++) { // Adjust the number of images as needed
         const image = document.createElement('img');
@@ -18,8 +19,10 @@ function createRainingImages() {
         image.style.height = 'auto'; // Maintain aspect ratio
         image.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
         image.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random animation duration (between 2 to 6 seconds)
-        image.style.animationDelay = Math.random() * 4 + 's'; // Random animation delay (between 0 to 4 seconds)
+        image.style.animationDelay = delay + 's'; // Set animation delay for each image
         rainContainer.appendChild(image);
+
+        delay += 1; // Increase delay for next image
     }
 }
 
