@@ -16,7 +16,9 @@ function createRainingImages() {
         image.classList.add('raindrop');
         image.style.width = '40px'; // Adjust the width of the images
         image.style.height = 'auto'; // Maintain aspect ratio
-        image.style.left = Math.random() * window.innerWidth + 'px'; // Random horizontal position
+        image.style.position = 'absolute';
+        image.style.left = Math.random() * (window.innerWidth - 40) + 'px'; // Random horizontal position
+        image.style.top = '0'; // Spawn at the top of the screen
         image.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random animation duration (between 2 to 6 seconds)
         rainContainer.appendChild(image);
     }
